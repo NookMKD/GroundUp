@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../stylesheets/quality.css" />
+    <link rel="stylesheet" href="../stylesheets/nav.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sofia"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quality of Life</title>
+  </head>
+  <body>
+    <div class="navBackground"></div>
+    <div class="navBar">
+      <div class="navLinks">
+        <a class="navButton" href="home.html"> HOME </a>
+        <a class="navButton" href="about.html"> ABOUT </a>
+        <div class="dropdown">
+          <div class="dropbtn">
+            <a class="navButton selectedPage" href="methodology.html">
+              THE METHODOLOGY
+            </a>
+          </div>
+          <div class="dropdown-content">
+            <a href="quality.html">Quality of Life</a>
+            <a href="human.html">Human Captial</a>
+            <a href="support.html">Support System</a>
+            <a href="funding.html">Funding and acces to capital</a>
+          </div>
+        </div>
+        <a class="navButton" href="resources.html"> RESOURCES </a>
+      </div>
+      <a href="home.html">
+        <img
+          class="topLogo"
+          src="../Images/Ground Up_Logo/PNG_Transparent/Ground Up_Logo_Transparent-02.png"
+          alt="LOGO"
+        />
+      </a>
+    </div>
+    <div class="navInfoDiv">
+      <br /><br />
+      <div
+        style="color: orange; float: left; display: block; margin-right: 35px"
+      >
+        53,169
+      </div>
+      <div
+        style="color: orange; float: left; display: block; margin-right: 35px"
+      >
+        53,169
+      </div>
+      <div
+        style="color: orange; float: left; display: block; margin-right: 35px"
+      >
+        53,169
+      </div>
+
+      <br />
+      <div
+        style="color: white; float: left; display: block; margin-right: 35px"
+      >
+        Lorem.
+      </div>
+      <div
+        style="color: white; float: left; display: block; margin-right: 30px"
+      >
+        Lorem.
+      </div>
+      <div
+        style="color: white; float: left; display: block; margin-right: 35px"
+      >
+        Lorem.
+      </div>
+    </div>
+
+    <table id="data-table">
+      <thead>
+        <tr>
+          <td class="tableName" colspan="8">
+            DRAFT METHODOLOGY - LIST OF INDICATORS
+          </td>
+        </tr>
+        <tr>
+          <th colspan="8">PILLAR I: Funding and capital access</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table body will be populated dynamically -->
+      </tbody>
+    </table>
+  </body>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="../script/qolTable.js"></script>
+  <script src="../script/script.js"></script>
+</html>

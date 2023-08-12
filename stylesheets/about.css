@@ -1,0 +1,77 @@
+body {
+  background-color: darkslategray;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.aboutContainer {
+  margin: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1rem;
+  background-color: white;
+  height: 1800px;
+}
+
+.aboutLogo {
+  position: relative;
+  height: 150px;
+  top: -170px;
+  left: 150px;
+  margin-bottom: -150px;
+}
+
+.textContainer {
+  float: left;
+  text-align: justify;
+}
+
+.textContainer p {
+  font-size: 2rem;
+}
+
+.highlightContainer {
+  margin-left: 100px;
+  height: 800px;
+  width: 30%;
+  float: right;
+  /* background-color: rgba(0, 0, 0, 0.007); */
+}
+
+.quote {
+  margin-top: 50px;
+  width: 100%;
+  float: left;
+  font-size: 55px;
+  position: relative;
+  padding: 30px;
+  background-color: #00000005;
+  line-height: 1.5;
+}
+
+.quote:before {
+  content: open-quote;
+  position: absolute;
+  font-size: 56px;
+  color: #f2ba14;
+}
+.quote:after {
+  content: close-quote;
+  position: absolute;
+  font-size: 56px;
+  color: #f2ba14;
+}
+
+.quote:before {
+  top: -20px;
+  left: -30px;
+}
+
+.quote:after {
+  bottom: -20px;
+  right: -25px;
+}
+
+/* .quote p {
+    margin: 0;
+  } */

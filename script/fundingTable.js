@@ -1,0 +1,75 @@
+document.addEventListener("DOMContentLoaded", () => {
+  loadExcelData("../tables/funding.xlsx");
+});
+
+function loadExcelData(filePath) {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", filePath, true);
+  xhr.responseType = "arraybuffer";
+
+  xhr.onload = function (e) {
+    const data = new Uint8Array(xhr.response);
+    const workbook = XLSX.read(data, { type: "array" });
+    const sheetName = workbook.SheetNames[0];
+    const worksheet = workbook.Sheets[sheetName];
+    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+    const tableBody = document.querySelector("#data-table tbody");
+    tableBody.innerHTML = "";
+    let maxRow = 0;
+    for (let i = 0; i < jsonData.length; i++) {
+      const row = jsonData[i];
+      maxRow = Math.max(maxRow, row.length);
+      const tr = document.createElement("tr");
+      for (let j = 0; j < maxRow; j++) {
+        const td = document.createElement("td");
+
+        // Check if the cell is part of a merged cell range
+        const cellAddress = XLSX.utils.encode_cell({ r: i, c: j });
+        const mergedCell =
+          worksheet["!merges"] &&
+          worksheet["!merges"].find(
+            (merge) =>
+              merge.s.c <= j &&
+              merge.e.c >= j &&
+              merge.s.r <= i &&
+              merge.e.r >= i
+          );
+
+        if (mergedCell) {
+          // Get the value from the top-left cell of the merged range
+          const topLeftCell = XLSX.utils.decode_cell(mergedCell.s);
+          td.textContent = getMergedCellValue(
+            topLeftCell.r,
+            topLeftCell.c,
+            worksheet,
+            jsonData
+          );
+        } else {
+          td.textContent = row[j];
+        }
+
+        tr.appendChild(td);
+      }
+
+      tableBody.appendChild(tr);
+    }
+  };
+
+  xhr.send();
+}
+
+function getMergedCellValue(row, col, worksheet, jsonData) {
+  for (const merge of worksheet["!merges"]) {
+    const { s, e } = merge;
+    if (row >= s.r && row <= e.r && col >= s.c && col <= e.c) {
+      const topLeftCell = XLSX.utils.decode_cell(s);
+      return jsonData[topLeftCell.r][topLeftCell.c];
+    }
+  }
+  return null;
+}
+
+function openPage(pageUrl) {
+  window.open(pageUrl);
+}
