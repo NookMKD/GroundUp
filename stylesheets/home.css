@@ -1,3 +1,6 @@
+html{
+  width: 100%;
+}
 body {
   background: linear-gradient(180deg, rgba(46, 79, 79, 1), white);
 }
@@ -8,7 +11,7 @@ body {
   padding-left: 25px;
   padding-top: 15px;
   opacity: 100%;
-  width: 450px;
+  /* width: 450px; */
   height: 200px;
   top: 150px;
   left: 50px;
@@ -23,6 +26,7 @@ body {
   padding-top: 10%;
   height: 700px;
   margin-left: -10px;
+  margin-right: 0;
   text-align: center;
   align-items: center;
   display: inline-block;

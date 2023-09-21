@@ -57,46 +57,49 @@ function loadExcelData(filePath) {
     console.log(workbook.SheetNames);
     const worksheet = workbook.Sheets[sheetName];
     const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-
+    console.log(jsonData);
     const tableBody = document.querySelector("#data-table tbody");
     tableBody.innerHTML = "";
     let maxRow = 1;
-    const merge = [{ s: { r: 1, c: 0 }, e: { r: 4, c: 0 } }];
-    jsonData["!merges"] = merge;
+
+const mergedCellAll = 
+  worksheet["!merges"];
+
+    console.log('mergedCellAll');
+    console.log(mergedCellAll);
+    // console.log(mergedCellAll[0]['s']['r']);
+    // console.log(mergedCellAll[0]['s']['c']);
+    // console.log(mergedCellAll[0]['e']['r']);
+    // console.log(mergedCellAll[0]['e']['c']);
 
     for (let i = 0; i < jsonData.length; i++) {
       const row = jsonData[i];
       maxRow = Math.max(maxRow, row.length);
       const tr = document.createElement("tr");
       for (let j = 0; j < maxRow; j++) {
+
         const td = document.createElement("td");
 
-        // Check if the cell is part of a merged cell range
-        const cellAddress = XLSX.utils.encode_cell({ r: i, c: j });
-        const mergedCell =
-          worksheet["!merges"] &&
-          worksheet["!merges"].find(
-            (merge) =>
-              merge.s.c <= j &&
-              merge.e.c >= j &&
-              merge.s.r <= i &&
-              merge.e.r >= i
-          );
-
-        if (mergedCell) {
-          // Get the value from the top-left cell of the merged range
-          const topLeftCell = XLSX.utils.decode_cell(mergedCell.s);
-          td.textContent = getMergedCellValue(
-            topLeftCell.r,
-            topLeftCell.c,
-            worksheet,
-            jsonData
-          );
-        } else {
-          td.textContent = row[j];
+        if(mergedCellAll != undefined){
+          mergedCellAll.forEach(element => {
+            if(i == element['s']['r'] && j == element['s']['c']) {
+              td.rowSpan = element['e']['r'] - element['s']['r'] +1;
+          }
+            td.textContent = row[j];
+            
+          });
+          if ((row[j] === undefined)) {
+            if (j != mergedCellAll[0]['s']['c'] && j!= mergedCellAll[1]['s']['c'] && j != mergedCellAll[2]['s']['c'] && j!= mergedCellAll[3]['s']['c']) {
+              tr.appendChild(td);
+            }
+          } else {
+            tr.appendChild(td)
+          }
         }
-
-        tr.appendChild(td);
+        else {
+          td.textContent = row[j];
+          tr.appendChild(td)
+        }
       }
 
       tableBody.appendChild(tr);
@@ -104,17 +107,6 @@ function loadExcelData(filePath) {
   };
 
   xhr.send();
-}
-
-function getMergedCellValue(row, col, worksheet, jsonData) {
-  for (const merge of worksheet["!merges"]) {
-    const { s, e } = merge;
-    if (row >= s.r && row <= e.r && col >= s.c && col <= e.c) {
-      const topLeftCell = XLSX.utils.decode_cell(s);
-      return jsonData[topLeftCell.r][topLeftCell.c];
-    }
-  }
-  return null;
 }
 
 function openPage(pageUrl) {

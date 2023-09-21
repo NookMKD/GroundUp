@@ -5,12 +5,14 @@ body {
 }
 
 .aboutContainer {
+  
   margin: auto;
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 1rem;
   background-color: white;
   height: 1800px;
+  margin-top: 5%;
 }
 
 .aboutLogo {

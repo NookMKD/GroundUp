@@ -4,6 +4,7 @@ body {
   font-size: 150%;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  width: 100%;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -16,6 +17,7 @@ body::-webkit-scrollbar {
   width: 100%;
   background-color: darkslategray;
   margin-left: -10px;
+  top: -3px;
   opacity: 80%;
   box-shadow: 10px 8px 16px 12px rgba(0, 0, 0, 0.2);
 }

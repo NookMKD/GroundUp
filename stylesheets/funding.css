@@ -147,6 +147,9 @@ th {
 
 td {
   min-width: 200px;
+  max-width: 300px;
+  font-size: 2vh;
+
   text-align: justify;
   overflow-y: scroll;
   min-height: 800px;
