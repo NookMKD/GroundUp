@@ -1,46 +1,3 @@
-// //////////////////////////////////////////////////////////////////////////////////
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   loadExcelData("../tables/Indicators-TC-Belgrade.xlsx");
-// });
-
-// function loadExcelData(filePath) {
-//   const xhr = new XMLHttpRequest();
-//   xhr.open("GET", filePath, true);
-//   xhr.responseType = "arraybuffer";
-
-//   xhr.onload = function (e) {
-//     const data = new Uint8Array(xhr.response);
-//     const workbook = XLSX.read(data, { type: "array" });
-//     const sheetName = workbook.SheetNames[0];
-//     const worksheet = workbook.Sheets[sheetName];
-//     const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-
-//     const tableBody = document.querySelector("#data-table tbody");
-//     tableBody.innerHTML = "";
-
-//     for (let i = 1; i < jsonData.length; i++) {
-//       const row = jsonData[i];
-//       const tr = document.createElement("tr");
-
-//       for (let j = 0; j < row.length; j++) {
-//         const td = document.createElement("td");
-//         td.textContent = row[j];
-//         tr.appendChild(td);
-//       }
-
-//       tableBody.appendChild(tr);
-//     }
-//   };
-
-//   xhr.send();
-// }
-
-// function openPage(pageUrl) {
-//   window.open(pageUrl);
-// }
-
-/////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
   loadExcelData("../tables/humanCapital.xlsx");
 });
@@ -64,14 +21,6 @@ function loadExcelData(filePath) {
 
 const mergedCellAll = 
   worksheet["!merges"];
-
-    console.log('mergedCellAll');
-    console.log(mergedCellAll);
-    // console.log(mergedCellAll[0]['s']['r']);
-    // console.log(mergedCellAll[0]['s']['c']);
-    // console.log(mergedCellAll[0]['e']['r']);
-    // console.log(mergedCellAll[0]['e']['c']);
-
     for (let i = 0; i < jsonData.length; i++) {
       const row = jsonData[i];
       maxRow = Math.max(maxRow, row.length);

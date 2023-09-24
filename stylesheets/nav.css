@@ -16,7 +16,6 @@ body::-webkit-scrollbar {
   height: 12%;
   width: 100%;
   background-color: darkslategray;
-  margin-left: -10px;
   top: -3px;
   opacity: 80%;
   box-shadow: 10px 8px 16px 12px rgba(0, 0, 0, 0.2);
@@ -27,8 +26,6 @@ body::-webkit-scrollbar {
   z-index: 1;
   text-align: center;
   height: 15%;
-  width: 100%;
-  margin-left: -10px;
 }
 .topLogo {
   float: left;
@@ -45,9 +42,12 @@ body::-webkit-scrollbar {
   }
 }
 
-.methodLogo {
+.method:hover .methodLogo {
   height: 9rem;
-  animation: rotateY 5s linear infinite;
+  animation: rotateY 2s linear infinite;
+}
+.methodLogo  {
+  height: 9rem;
 }
 
 .bottomLogo {

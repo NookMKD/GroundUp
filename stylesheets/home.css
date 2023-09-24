@@ -1,8 +1,11 @@
 html{
-  width: 100%;
+  overflow-x: hidden;
 }
+
 body {
   background: linear-gradient(180deg, rgba(46, 79, 79, 1), white);
+  margin: 0;
+  
 }
 
 .navInfoDiv {
@@ -22,14 +25,13 @@ body {
 .methodologyDiv {
   background-color: white;
   width: 100%;
-  padding: 15px;
   padding-top: 10%;
   height: 700px;
-  margin-left: -10px;
-  margin-right: 0;
+  /* margin-left: -10px; */
   text-align: center;
   align-items: center;
   display: inline-block;
+  overflow: hidden;
   /* background-color: orange; */
   /* box-shadow: 0px 8px 16px 12px orange; */
 }
@@ -50,9 +52,16 @@ body {
   margin-left: 2%;
   padding: 1rem;
   padding-top: 0;
-  overflow: scroll;
+  overflow: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  text-align: center;
+  word-spacing: -2px;
+}
+
+.methodText {
+  margin-top: -2%;
+  overflow: hidden;
 }
 
 .method::-webkit-scrollbar {
@@ -81,38 +90,122 @@ body {
   float: right;
   margin-right: 60px;
   margin-top: 260px;
+  background-image: url(../Images/InfoGraphicTeamPhoto.jpg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.infoGraphic:hover .infoText {
+  display: block;
+  background-color: rgba(211, 211, 211, 0.747);
+  animation: fadeIn 1s;
+
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; display: block;}
+}
+
+.infoText {
+  margin-top: 0%;
+  display: none;
+  width: 100%;
+  text-align: justify;
+  font-size: 100%;
+}
+
+.infoGraphicTeamPhoto {
+  width: 45%;
+  margin-top: 3%;
+  float: right;
 }
 .newsContainer {
   width: 100%;
   height: 400px;
-  background-color: black;
   /* float: ; */
-  margin-right: 60px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-left: -1%;
   /* margin-top: 100px; */
   margin-bottom: 100px;
+  text-align: center;
 }
 
-.methodLogo {
-  height: 15rem;
-  /* animation: rotateY 5s linear infinite; */
+.newsText {
+  margin-top: 1%;
+  text-align: justify;
+  margin-right: 5%;
+  float: right;
+  width: 40%;
+  height: 40%;
+  color: black;
+}
+.newsPhoto {
+  margin-top: 1%;
+  max-width: 100%;
+  max-height: 85%;
 }
 
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+/* Carousel */
+
+.slider-wrapper {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.slides-container {
+  height: 25rem;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+.slide {
+  width: 100%;
+  flex: 1 0 100%;
 }
 
-.logoCircle {
-  animation: fade 2s ease-in-out infinite;
+.slides-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+/* WebKit */
+.slides-container::-webkit-scrollbar { 
+  width: 0;
+  height: 0;
+}
+
+.slide-arrow {
   position: absolute;
-  width: 11rem;
-  left: 265px;
-  bottom: -1605px;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 4rem;
+  background-color: white;
+  border: none;
+  width: 2rem;
+  font-size: 3rem;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 100ms;
+}
+.slide-arrow:hover,
+.slide-arrow:focus {
+  opacity: 1;
+}
+#slide-arrow-prev {
+  left: 0;
+  padding-left: 0.25rem;
+  border-radius: 0 2rem 2rem 0;
+}
+#slide-arrow-next {
+  right: 0;
+  padding-left: 0.75rem;
+  border-radius: 2rem 0 0 2rem;
 }
