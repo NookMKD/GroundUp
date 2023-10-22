@@ -1,79 +1,85 @@
+
 body {
   background-color: darkslategray;
   box-sizing: border-box;
   align-items: center;
 }
 
-.aboutContainer {
-  
-  margin: auto;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 1rem;
+.aboutContainer {  
+  padding: 2vh;
+  padding-top: 1vh;
   background-color: white;
-  height: 1800px;
-  margin-top: 5%;
+  height: fit-content;
+  margin-top: 15vh;
+  text-align: justify;
+  overflow-y: hidden;
+  /* width: 100%; */
+}
+
+#title{
+  /* width: 70vw; */
+  height: 16vh;
+  display: inline-block;
 }
 
 .aboutLogo {
-  position: relative;
-  height: 150px;
-  top: -170px;
-  left: 150px;
-  margin-bottom: -150px;
-}
-
-.textContainer {
   float: left;
-  text-align: justify;
-}
-
-.textContainer p {
-  font-size: 2rem;
-}
-
-.highlightContainer {
-  margin-left: 100px;
-  height: 800px;
-  width: 30%;
-  float: right;
-  /* background-color: rgba(0, 0, 0, 0.007); */
+   height: 14vh; 
+   padding-top: 2vh;
 }
 
 .quote {
-  margin-top: 50px;
-  width: 100%;
+  width: 90%;
   float: left;
-  font-size: 55px;
   position: relative;
-  padding: 30px;
+  text-align: center;
+  
   background-color: #00000005;
   line-height: 1.5;
 }
 
 .quote:before {
+  padding-left: 5vh;
   content: open-quote;
   position: absolute;
-  font-size: 56px;
+  font-size: 10vh;
   color: #f2ba14;
 }
 .quote:after {
   content: close-quote;
   position: absolute;
-  font-size: 56px;
+  font-size: 10vh;
   color: #f2ba14;
 }
 
 .quote:before {
-  top: -20px;
-  left: -30px;
+  top: -3vh;
+  left: -2vh;
 }
 
 .quote:after {
-  bottom: -20px;
-  right: -25px;
+  bottom: -5vh;
+  right: -2vh;
 }
 
-/* .quote p {
-    margin: 0;
-  } */
+@media only screen and (max-width: 600px) {
+  #aboutImg{
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) {
+  
+  #aboutImg{
+    height: 80vh;
+  } 
+}
+
+@media only screen and (max-width: 544px) {
+  #title{
+    width: 14vh;
+  }
+
+  .aboutLogo{
+    display: none;
+  }
+}

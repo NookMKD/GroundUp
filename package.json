@@ -1,0 +1,24 @@
+{
+  "name": "groundupv2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "sass": "^1.69.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NookMKD/GroundUp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NookMKD/GroundUp/issues"
+  },
+  "homepage": "https://github.com/NookMKD/GroundUp#readme"
+}

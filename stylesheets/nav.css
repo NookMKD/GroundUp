@@ -1,10 +1,9 @@
 body {
   background-color: darkslategray;
   font-family: montserrat, sans-serif;
-  font-size: 150%;
+  font-size: 2.8vh;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  width: 100%;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -13,7 +12,7 @@ body::-webkit-scrollbar {
 .navBackground {
   position: fixed;
   z-index: 1;
-  height: 12%;
+  height: 15vh;
   width: 100%;
   background-color: darkslategray;
   top: -3px;
@@ -21,11 +20,12 @@ body::-webkit-scrollbar {
   box-shadow: 10px 8px 16px 12px rgba(0, 0, 0, 0.2);
 }
 .navBar {
+  padding-top: 1vh ;
   position: fixed;
   top: -6px;
   z-index: 1;
   text-align: center;
-  height: 15%;
+  height: fit-content;
 }
 .topLogo {
   float: left;
@@ -42,6 +42,24 @@ body::-webkit-scrollbar {
   }
 }
 
+img.vert-move {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+img.vert-move {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+
 .method:hover .methodLogo {
   height: 9rem;
   animation: rotateY 2s linear infinite;
@@ -50,17 +68,6 @@ body::-webkit-scrollbar {
   height: 9rem;
 }
 
-.bottomLogo {
-  z-index: -1;
-  position: relative;
-  text-align: center;
-  align-items: center;
-  /* top: -2100px; */
-  /* margin-left: -20%; */
-  /* margin-right: 25%; */
-  /* background-color: darkslategray; */
-  height: 1200px;
-}
 .navButton {
   margin: 2vw;
 
@@ -72,9 +79,10 @@ body::-webkit-scrollbar {
 .navButton:hover {
   color: #f2ba14;
 }
+
 .navLinks {
   position: fixed;
-  top: 5.5%;
+  top: 8.5%;
   left: 5%;
   right: 5%;
   opacity: 100%;
@@ -92,11 +100,9 @@ body::-webkit-scrollbar {
   display: none;
   position: absolute;
   min-width: 306px;
-  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,1); */
   z-index: 1;
   border-radius: 20px;
   margin-left: 2vw;
-  /* margin-top: px; */
 }
 
 .dropdown-content a {
@@ -122,52 +128,112 @@ body::-webkit-scrollbar {
   margin-left: -10px;
   margin-bottom: -10px;
   position: relative;
-  text-align: left;
-  width: 100%;
+  text-align: center;
   background-color: black;
-  height: 75px;
-  padding: 15px;
+  height: 10vh;
+  padding-top: 2vh;
   color: white;
 }
 
-.spacer {
-  height: 30px;
-}
-
 .arrow-down {
-  width: 0;
-  height: 0;
+  width: 1vh;
+  height: 1vh;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 15px solid #000; /* You can change the color here */
   display: none;
   margin: auto;
-  margin-top: 5%;
+  margin-top: 70%;
 }
 
-@media (max-width: 768px) {
+
+#aboutImg{
+  /* height: 80vh; */
+  float: right;
+}
+
+
+#data-table{
+  margin-top: 15vh;
+}
+
+
+@media only screen and (width: 600px) {
+
   .navLinks {
-    display: none;
+    font-size: 3vh;
+    padding-right: 0;    
+  }  
+}
+
+@media only screen and (max-width: 700px) {
+
+  body{
+    /* width: 105%; */
+    overflow-x: hidden;
   }
-  .arrow-down {
-    display: block;
+  .navBar{
+    text-align: center;
+    margin-left: 47.8%;
   }
+  
   .spacer {
     height: 50px;
   }
-}
-
-@media (max-width: 1584px) {
+  
   .topLogo {
     display: none;
   }
+
+  .infoGraphic{
+    width: 79%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {  
   .navBackground {
-    height: 5%;
+    height: 15vh;
   }
   .spacer {
     height: 0px;
   }
   .navLinks {
     top: 1%;
+  }
+  .topLogo {
+    height: 4.5rem;
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+  .topLogo {
+    height: 9.5rem;
+    display: none;
+    float: left;
+  }
+  .bottomLogo{
+    display: none;
+  }
+  .infoGraphic{
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .topLogo {
+    padding-top: 1rem;
+    height: 7.5rem;
+    display: block;
+    float: left;
+  }
+}@media only screen and (max-width: 500px) {
+
+  #aboutImg{
+    height: 1vh;
+  }
+  .infoGraphic{
+    width: 79%;
   }
 }

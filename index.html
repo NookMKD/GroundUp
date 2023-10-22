@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="../stylesheets/home.css" />
+  <link rel="stylesheet" href="../stylesheets/nav.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+</head>
+
+<body>
+  <div w3-include-html="nav.html"></div>
+  <div w3-include-html="index-content.html"></div>
+  <div class="newsContainer">
+    <section class="slider-wrapper">
+      <button class="slide-arrow" id="slide-arrow-prev">
+        &#8249;
+      </button>
+
+      <button class="slide-arrow" id="slide-arrow-next">
+        &#8250;
+      </button>
+
+
+      <ul class="slides-container" id="slides-container">
+        <li class="slide">
+          <img class="newsPhoto" src="../Images/InfoGraphicTeamPhoto.jpg" />
+          <div class="newsText">
+            When a group of young people from 11 countries, from 3 continents, will
+            spend two years of their time on a joint project, it is inevitable that
+            it is a very important discussion. And it really is. Through the
+            activities of the project, a series of capacity building and mobility
+            activities were realized, through which a methodology was developed that
+            includes a framework that consists of a list of evidence-based
+            indicators for success, enabling youth organizations to evaluate their
+            communities, cities in order to better understand social entrepreneurial
+            eco-systems, to better identify the area of focus and potential
+            partners.
+
+            <a href="../Images/" download="Workshop-template.pdf"> Read more </a>
+          </div>
+        </li>
+        <li class="slide">
+          <img class="newsPhoto" src="../Images/Ground Up_Logo/CMYK_Transparent/Ground Up_CMYK_Transparent-01.png" />
+          <div class="newsText">
+            When a group of young people from 11 countries, from 3 continents, will
+            spend two years of their time on a joint project, it is inevitable that
+            it is a very important discussion. And it really is. Through the
+            activities of the project, a series of capacity building and mobility
+            activities were realized, through which a methodology was developed that
+            includes a framework that consists of a list of evidence-based
+            indicators for success, enabling youth organizations to evaluate their
+            communities, cities in order to better understand social entrepreneurial
+            eco-systems, to better identify the area of focus and potential
+            partners.
+
+            <a href="../Images/" download="Workshop-template.pdf"> Read more </a>
+          </div>
+        </li>
+        <li class="slide">
+          <img class="newsPhoto" src="../Images/InfoGraphicTeamPhoto.jpg" />
+          <p class="newsText">
+            When a group of young people from 11 countries, from 3 continents, will
+            spend two years of their time on a joint project, it is inevitable that
+            it is a very important discussion. And it really is. Through the
+            activities of the project, a series of capacity building and mobility
+            activities were realized, through which a methodology was developed that
+            includes a framework that consists of a list of evidence-based
+            indicators for success, enabling youth organizations to evaluate their
+            communities, cities in order to better understand social entrepreneurial
+            eco-systems, to better identify the area of focus and potential
+            partners.
+
+            <a href="../Images/" download="Workshop-template.pdf"> Read more </a>
+          </p>
+        </li>
+        <li class="slide">
+          <img class="newsPhoto" src="../Images/InfoGraphicTeamPhoto.jpg" />
+          <p class="newsText">
+            When a group of young people from 11 countries, from 3 continents, will
+            spend two years of their time on a joint project, it is inevitable that
+            it is a very important discussion. And it really is. Through the
+            activities of the project, a series of capacity building and mobility
+            activities were realized, through which a methodology was developed that
+            includes a framework that consists of a list of evidence-based
+            indicators for success, enabling youth organizations to evaluate their
+            communities, cities in order to better understand social entrepreneurial
+            eco-systems, to better identify the area of focus and potential
+            partners.
+
+            <a href="../Images/" download="Workshop-template.pdf"> Read more </a>
+          </p>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div w3-include-html="footer.html"></div>
+</body>
+
+<script src="script/script.js"></script>
+
+<script>
+  includeHTML();
+</script>
+
+<script>
+  function initSlider() {
+
+    const slidesContainer = document.getElementById("slides-container");
+    const slide = document.querySelector(".slide");
+    const prevButton = document.getElementById("slide-arrow-prev");
+    const nextButton = document.getElementById("slide-arrow-next");
+    nextButton.addEventListener("click", () => {
+      // console.log("testnext");
+      const slideWidth = slide.clientWidth;
+      slidesContainer.scrollLeft += slideWidth;
+    });
+    prevButton.addEventListener("click", () => {
+      // console.log("testprev");
+      const slideWidth = slide.clientWidth;
+      slidesContainer.scrollLeft -= slideWidth;
+    });
+    // console.log("test");
+  }
+  initSlider();
+</script>
+<!-- <scripts src="script/slides.js"></scripts> -->
+
+</html>

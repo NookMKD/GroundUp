@@ -2,11 +2,6 @@ body {
   background: linear-gradient(180deg, rgba(46, 79, 79, 1), white);
 }
 
-@media (max-width: 768px) {
-  .navBar {
-    display: none;
-  }
-}
 
 table {
   border-collapse: collapse;
@@ -28,12 +23,12 @@ th {
 }
 
 .resourcesData {
-  /* padding-top: 7%; */
-  width: 100%;
+   /* padding-top: 7%; */
+  width: 90vw;
   height: 70%;
   background-color: white;
   margin: auto;
-  margin-top: 7%;
+  margin-top: 15vh;
 }
 
 .cardContainer {
@@ -42,8 +37,9 @@ th {
 }
 
 .card {
-  width: 350px;
-  height: 500px;
+  min-width: 20vw;
+  min-height: 25vw;
+  max-height: 50vw;
   float: left;
   background-color: black;
 }

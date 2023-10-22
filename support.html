@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="../stylesheets/table.css" />
+  <link rel="stylesheet" href="../stylesheets/nav.css" />
+  <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support System</title>
+</head>
+
+<body>
+  <div w3-include-html="nav.html"></div>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th colspan="8">PILLAR III: Support Systems</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Table body will be populated dynamically -->
+    </tbody>
+  </table>
+</body>
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+<script src="../script/supportTable.js"></script>
+<script src="../script/script.js"></script>
+<script>
+  includeHTML();
+</script>
+
+</html>
