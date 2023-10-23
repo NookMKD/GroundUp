@@ -100,7 +100,7 @@ body {
 }
 
 .infoGraphic {
-  padding: 1vh;
+  /* padding: 1vh; */
   width: 55%;
   height: 81vh;
   background-color: white;
@@ -124,11 +124,13 @@ body {
   width: 100%;
   text-align: justify;
   word-wrap: break-word;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 .infoGraphic:hover .infoText {
   display: inline-block;
-  background-color: rgba(211, 211, 211, 0.747);
+  background-color: rgba(221, 221, 221, 0.8);
   animation: fadeIn 1s;
 }
 
